@@ -4,55 +4,69 @@ import java.util.Vector;
 
 public class Lista {
 	
-	public Vector<Integer> numeri;
+	private Vector elementi;
 	
 	public Lista(){
 		
-		numeri = new Vector<Integer>();
+		elementi = new Vector();
 	}
 	
-	public void inserisciIntesta(int n) {
-		
-		 if(!numeri.contains(new Integer(n))) numeri.add(0,new Integer(n));
-		 else{
-			 
-			 numeri.setSize(numeri.size()+1);
-			 numeri.add(0,new Integer(n));
-			 
-		 }
-		
+	public void insertAtBeginning(int n) {
+
+			 elementi.add(0,new Integer(n)); 
 	}
 	
-	public void inserisciInCoda(int n){
-		
-		 if(!numeri.contains(new Integer(n))) numeri.addElement(new Integer(n));
-		 else{
-			 
-			 numeri.setSize(numeri.size()+1);
-			 numeri.addElement(new Integer(n));
-			 
-		 }
+	public void insertAtEnd(int n){
+
+			 elementi.addElement(new Integer(n));
 	}
 	
-	public void inserisciInPosizione(int n,int pos){
-		if(!numeri.contains(new Integer(n))) numeri.add(pos,new Integer(n));
-		 else{
-			 
-			 numeri.setSize(numeri.size()+1);
-			 numeri.add(pos,new Integer(n));
-			 
-		 }
+	public void insertAtPosition(int n,int pos){
 		
+			 elementi.add(pos,new Integer(n));
 	}
 	
-	public dimensioneLista(List lista){
-		return;
+	public int getDimension(){
+		
+		return  elementi.size();
+	}
+	
+	public int getFirst(){
+		
+		return ((Integer)elementi.firstElement()).intValue();	
+	}
+	
+	public int getLast(){
+		
+		return((Integer)elementi.lastElement()).intValue();
+	}
+	
+	public int getAtPosition(int pos){
+		
+		return((Integer)elementi.elementAt(pos)).intValue();
+	}
+	
+	public void removeFirst(){
+		elementi.removeElementAt(0);
+	}
+	
+	public void removeLast(){
+		elementi.removeElementAt(elementi.size());
+	}
+	
+	public void Empty(){
+		elementi.removeAllElements();
+	}
+	
+	public void getCapacity(){
+		elementi.capacity();
 	}
 
 	@Override
 	public String toString() {
-		return "Lista [numeri=" + numeri + "]";
+		return "numeri= {" + elementi + "}";
 	}
+
 	
 	
 	

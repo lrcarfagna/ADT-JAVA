@@ -7,11 +7,10 @@ public class Ese10X {
 	public static void main(String[] args) {
 		
 		Lista l=new Lista();
-		l.inserisciIntesta(5);
-		l.inserisciInCoda(6);
-		
-		for(int i=0;i<l.)
-		l.inserisciInPosizione(2,1); //
+		l.insertAtBeginning(5);
+		l.insertAtEnd(6);
+	    l.insertAtPosition(2, 1);
+	    System.out.println(l.getDimension());
 		System.out.println(l.toString());
 		
 
